@@ -18,17 +18,18 @@ echo "
 
 read -p '[*] Enter The Path of the Targets List : ' Targets
 read -p '[*] Enter The Path of Output Folder : ' Output
+read -p '[*] Enter The File Name of Output File where the script will save the results (only .html) : ' Filename
 
-touch $Output
+touch $Output/$Filename
 
 for Target in $(cat $Targets); do
   if [ "`ping -c 1 $Target`" ]; then
 
-    echo "<a href=\"http://$Target\" target="_blank">$Target</a> : up!<br>" >> $Output/subs.html
+    echo "<a href=\"http://$Target\" target="_blank">$Target</a> : up!<br>" >> $Output/$Filename
 
   else
 
-    echo "<a href=\"http://$Target\" target="_blank">$Target</a> : down!!<br>" >> $Output/subs.html
+    echo "<a href=\"http://$Target\" target="_blank">$Target</a> : down!!<br>" >> $Output/$Filename
 
   fi > /dev/null 2>&1
 
