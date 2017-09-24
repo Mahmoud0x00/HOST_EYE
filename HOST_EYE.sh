@@ -27,10 +27,6 @@ for Target in $(cat $Targets); do
 
     echo "<a href=\"http://$Target\" target="_blank">$Target</a> : up!<br>" >> $Output/$Filename
 
-  else
-
-    echo "<a href=\"http://$Target\" target="_blank">$Target</a> : down!!<br>" >> $Output/$Filename
-
   fi > /dev/null 2>&1
 
 done
